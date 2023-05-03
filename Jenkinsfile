@@ -22,6 +22,12 @@ pipeline {
          }
 
      }
+       stage("Email Notification"){
+         mail bcc: '', body: '''Hi welcome to jenkins email alerts
+         Thanks
+         Team''', cc: '', from: '', replyTo: '', subject: 'jenkins job', to: 'dhupati@prakat.in' 
+       }
+  
   
    	}
 
