@@ -1,4 +1,4 @@
-# vue_demo_project ok
+# vue_demo_project yes
 
 ## Project setup
 ```
