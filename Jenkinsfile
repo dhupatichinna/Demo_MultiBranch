@@ -14,16 +14,6 @@ pipeline {
         steps { 
            sh 'echo "testing application..."'
         }
-        
-        post {
-             success {
-              emailext body: 'Tests job has been succeeded!', subject: 'Tests succeeded!', to:'dhupati@prakat.in'
-             }
-             failure {
-               emailext body: 'Tests job has been failed!', subject: 'Tests failed!', to: 'dhupati@prakat.in'
-             }
-        }
-      }
 
          stage("Deploy application") { 
              steps { 
