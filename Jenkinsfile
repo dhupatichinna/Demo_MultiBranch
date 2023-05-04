@@ -15,29 +15,24 @@ pipeline {
            sh 'echo "testing application..."'
         }
         
-        post {
-             success {
-              emailext body: 'Tests succeeded!', subject: 'Tests succeeded!', to:'dhupati@prakat.in'
-             }
-             failure {
-               emailext body: 'Tests failed!', subject: 'Tests failed!', to: 'dhupati@prakat.in'
-             }
-        }
+       
       }
 
          stage("Deploy application") { 
              steps { 
                sh 'echo "deploying application..."'
              }
-             post {
+             
+     } 
+        
+         post {
                success {
-                  emailext body: 'Tests succeeded!', subject: 'Tests succeeded!', to:'dhupati@prakat.in'
+                  emailext body: 'Jenkins job has been succeeded!', subject: 'Jenkin Job succeeded!', to:'dhupati@prakat.in'
                }
                failure {
-                 emailext body: 'Tests failed!', subject: 'Tests failed!', to:'dhupati@prakat.in'
+                 emailext body: 'Jenkins job has been failed!', subject: 'Jenkin Job failed!', to:'dhupati@prakat.in'
                }
              }
-     }
   
    	}
 
