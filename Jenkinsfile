@@ -6,12 +6,7 @@ pipeline {
    
      stage('Install Dependencies') { 
         steps {  
-           sh 'npm install' 
-        }
-        post {
-          failure {
-             emailext body: ' Dev-npm install has failed', subject: 'Dev-Jenkins - npm install failed', to:'dhupati@prakat.in'
-          }
+           sh 'npm2222 install' 
         }
      }
      
@@ -19,37 +14,24 @@ pipeline {
         steps { 
            sh 'echo "testing application..."'
         }
-        post {
-          failure {
-             emailext body: 'Dev-testing application has failed', subject: 'Dev-Jenkins - testing application failed', to:'dhupati@prakat.in'
-          }
-        }
       }
 
      stage("Deploy application") { 
          steps { 
            sh 'echo "deploying application..."'
          }
-         post {
-          failure {
-             emailext body: 'Dev-deployment has failed', subject: 'Dev-Jenkins - deployment failed', to:'dhupati@prakat.in'
-          }
-        }
      }
   
    }
 
    post {
       success {
-         emailext body: 'Dev Jenkins job has been succeeded!', subject: 'Dev-Jenkins Job succeeded!', to:'dhupati@prakat.in'
+         emailext body: 'Stage Jenkins job has been succeeded!', subject: ' StageJenkins Job succeeded!', to:'dhupati@prakat.in'
       }
       failure {
-         emailext body: 'Dev Jenkins job has been failed!', subject: 'Dev-Jenkins Job failed!', to:'dhupati@prakat.in'
+         emailext body: 'Stage Jenkins job has been failed!', subject: ' Stage Jenkins Job failed!', to:'dhupati@prakat.in'
       }
    }
 }
-
-
-
 
 
