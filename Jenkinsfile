@@ -26,10 +26,10 @@ pipeline {
 
    post {
       success {
-         emailext body: 'Master Jenkins job has been succeeded!', subject: 'Jenkins Job                      succeeded!', to:'dhupati@prakat.in'
+         emailext body: 'Master Jenkins job has been succeeded!', subject: 'Jenkins Job succeeded!', to:'dhupati@prakat.in'
       }
       failure {
-         emailext body: 'Master Jenkins job has been failed!', subject: 'Jenkins Job failed!',                 to:'dhupati@prakat.in'
+         emailext body: 'Master Jenkins job has been failed!', subject: 'Jenkins Job failed!', to:'dhupati@prakat.in'
       }
    }
 }
