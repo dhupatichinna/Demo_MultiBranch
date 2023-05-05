@@ -6,7 +6,7 @@ pipeline {
    
      stage('Install Dependencies') { 
         steps {  
-           sh 'npm1111 install' 
+           sh 'npm install' 
         }
      }
      
@@ -26,10 +26,10 @@ pipeline {
 
    post {
       success {
-         emailext body: 'Stage Jenkins job has been succeeded!', subject: 'Jenkins Job succeeded!', to:'dhupati@prakat.in'
+         emailext body: 'Stage Jenkins job has been succeeded!', subject: ' StageJenkins Job succeeded!', to:'dhupati@prakat.in'
       }
       failure {
-         emailext body: 'Stage Jenkins job has been failed!', subject: 'Jenkins Job failed!', to:'dhupati@prakat.in'
+         emailext body: 'Stage Jenkins job has been failed!', subject: 'Stage Jenkins Job failed!', to:'dhupati@prakat.in'
       }
    }
 }
