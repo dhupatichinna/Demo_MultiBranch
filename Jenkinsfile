@@ -17,10 +17,10 @@ pipeline {
         
         post {
              success {
-              emailext body: 'Tests job has been succeeded!', subject: 'Tests succeeded!', to:'dhupati@prakat.in'
+              emailext body: 'Jenkins job has been succeeded!', subject: 'Jenkins Job succeeded!', to:'dhupati@prakat.in'
              }
              failure {
-               emailext body: 'Tests job has been failed!', subject: 'Tests failed!', to: 'dhupati@prakat.in'
+               emailext body: 'Jenkins job has been failed!', subject: 'Jenkins Job failed!', to: 'dhupati@prakat.in'
              }
         }
       }
@@ -31,10 +31,10 @@ pipeline {
              }
              post {
                success {
-                  emailext body: 'Tests job has been succeeded!', subject: 'Tests succeeded!', to:'dhupati@prakat.in'
+                  emailext body: 'Jenkins job has been succeeded!', subject: 'Jenkins Job succeeded!', to:'dhupati@prakat.in'
                }
                failure {
-                 emailext body: 'Tests job has been failed!', subject: 'Tests failed!', to:'dhupati@prakat.in'
+                 emailext body: 'Jenkins job has been failed!', subject: 'Jenkins Job failed!', to:'dhupati@prakat.in'
                }
              }
      }
